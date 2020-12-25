@@ -1,3 +1,45 @@
+function threeNumberSum(array, targetSum) {
+  
+	array.sort((a,b) => (a-b));
+	var start = 0; 
+	var end = array.length - 1;
+	var output = [];
+	while(start < end) {
+		var i= start +1;
+		var j = end -1;
+		var result = [];
+	    var findSum = targetSum - array[end] -array[start];
+		
+		while(i < j) {
+			if(findSum == array[i]) {
+			 	result.push(array[start], array[i], array[end]);
+			 	if(Math.abs(array[end]) > Math.abs(array[start])) {
+			 	    end--
+			 	} else {
+				    start++;
+			 	}
+			}
+		}
+		
+	}
+	return output;
+}
+
+
+console.log(threeNumberSum([12,3,1,2,-6,5,-8,6], 0));
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * @param {number[]} nums
  * @return {number[][]}
@@ -35,5 +77,5 @@ var threeSum = function(nums) {
     return output;
 }; 
 
-var result = threeSum([-1,0,1,2,-1,-4, 1,2]);
-console.log(result);
+// var result = threeSum([-1,0,1,2,-1,-4, 1,2]);
+// console.log(result);
