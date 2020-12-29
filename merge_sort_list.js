@@ -5,8 +5,8 @@ const mergeSort = (head) => {
 
     const mid = getMiddleAndSplitInhalf(head);
 
-    const leftHalf = mergSort(head);
-    const rightHalf = mergSort(mid);
+    const leftHalf = mergeSort(head);
+    const rightHalf = mergeSort(mid);
 
     return merge(leftHalf, rightHalf);
 }
